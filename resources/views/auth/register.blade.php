@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <p align="center">Already have an account, then please
-            <a class="red" href="{{ route('login') }}">login </a>
+            <a style="color: red; font-size: inherit" href="{{ route('login') }}">login </a>
         </p>
 
     <form action="{{ route('register') }}" method="post">

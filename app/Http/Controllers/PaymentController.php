@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Paystack;
 use App\Donation;
 use Session;
+use Auth;
 
 class PaymentController extends Controller
 {
@@ -32,11 +33,13 @@ class PaymentController extends Controller
     {
         $paymentDetails = Paystack::getPaymentData();
 
-        $user_id = auth()->user()->id;
+        $user_id = Auth::user()->id;
         $category_name = (($paymentDetails['data'] ['metadata']['category_name'])); 
         $amount = (($paymentDetails['data'] ['amount'])); 
 
         if($paymentDetails['data']['status'] == 'success'){
+
+            // save returned data from paystack into database
             $donation = new Donation; 
             $donation->user_id = $user_id; 
             $donation->category_name = $category_name; 

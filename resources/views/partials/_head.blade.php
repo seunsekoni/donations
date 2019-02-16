@@ -3,12 +3,13 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/action.css')}}" rel="stylesheet"/>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
 
     <script src="{!! asset('/js/jquery-1.11.1.min.js') !!}" ></script>
     <script src="{!! asset('/js/bootstrap.js')!!}"></script>
-    <!-- <script src="{{ asset('/js/popper.js') }}"></script> -->
+    <script src="{{ asset('/js/popper.js') }}"></script>
+    
+    <link href="{{ asset('css/action.css')}}" rel="stylesheet"/>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
 
     <title>{{ config('app.name', 'act!onaid') }}</title>

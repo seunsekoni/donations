@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('donations/{id}', 'DonationController@show')->name('donations.show');
 Route::get('new/donations', 'DonationController@create')->name('donations.create');
 Route::post('new/donations', 'DonationController@store')->name('donations.store');
+
+//Payment
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Donation;
 use App\User;
 
+
 class DonationController extends Controller
 {
     /**
@@ -29,6 +30,7 @@ class DonationController extends Controller
 
     public function store(Request $request) {
 
+        
         $donation = new Donation;
         $donation->category_name = $request->category;
         $donation->amount = $request->amount;

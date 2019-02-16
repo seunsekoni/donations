@@ -8,7 +8,7 @@
 <br><br>  While: Give Once is a ‘One-off’ Donation
       </p>
       <div class="donate">
-        <form action="{{ route('donations.store') }}" method="post">
+        <form action="{{ url('/pay') }}" method="post">
         @csrf
           <label for="monthly" id="monthly">Give Monthly</label>
           <input type="radio" name="category" id="monthly" value="Give Monthly" required>
@@ -19,18 +19,19 @@
           <p class="red" align="center">Pick an amount below</p>
             <div class="form-group">
               <label for="twok" id="twok" style="margin-left: 50px;">NGN2,000</label>
-              <input type="radio" name="amount" id="twok" value="2000" required>
+              <input type="radio" name="amount" id="twok" value="200000" required>
   
               <input type="radio" name="amount" id="threek" style="margin-left: 50px;" value="3000">
               <label for="threek" id="threek">NGN3,000</label>
   
               <label for="fivek" id="fivek" style="margin-left: 50px;">NGN5,000</label>
-              <input type="radio" name="amount" id="fivek" value="5000">
+              <input type="radio" name="amount" id="fivek" value="500000">
   
-              <input type="radio" name="amount" value="10000" id="tenk" style="margin-left: 50px;">
+              <input type="radio" name="amount" value="1000000" id="tenk" style="margin-left: 50px;">
               <label for="tenk" id="tenk">NGN10,000</label>
             </div>
 
+          <input type="hidden" name="metadata" value="{{ json_encode($array = ['category_name' => 'monthly']) }}" >
           <div class="form-group">
             <input type="submit" value="Donate" class="btn btn-danger" style="margin-left: 40%">
           

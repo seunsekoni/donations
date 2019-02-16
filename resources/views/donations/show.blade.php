@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <table class="table">
+      <table class="table table-striped">
         <thead>
           <th>SN</th>
           <th>DONATION CATEGORY</th>
@@ -15,8 +15,8 @@
             <tr>
               <td>{{ $donation->id }}</td>
               <td>{{ $donation->category_name }}</td>
-              <td>{{ $donation->created_at }}</td>
-              <td>{{ $donation->amount }}</td>
+              <td>{{ date("d-M-Y ", strtotime($donation->created_at)) }}</td>
+              <td>NGN {{ $donation->showPrice() }}</td>
             </tr>
             @endforeach
           </tbody>

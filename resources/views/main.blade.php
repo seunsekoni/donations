@@ -4,8 +4,11 @@
     @include('partials._head')
   </head>
   <body>
+    @include('partials._message')
     @guest
-    <div class="logo">{{ config('app.name', 'actionaid') }}</div>
+    <div class="logo">
+      <a href="{{ route('home') }}">{{ config('app.name', 'actionaid') }}</a>
+    </div>
     @else
  <div class="dropdown">
   <button class="logo dropdown-toggle" type="button" data-toggle="dropdown">{{ config('app.name', 'actionaid') }}</button>
@@ -14,7 +17,7 @@
     <li><a href="{{ route('donations.create') }}">Donate</a></li>
     <li><form action="{{ url('logout') }}" method="POST">
             {{ csrf_field() }}
-            <input type="submit" value="Logout">
+            <input type="submit" value="Logout" style="{font-size: 50px; padding 10px 20px; display: block;}">
         </form></li>
   </ul>
 </div>

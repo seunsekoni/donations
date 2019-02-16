@@ -11,6 +11,13 @@ use App\User;
 class DonationController extends Controller
 {
     /**
+     * function to lock down the pages for only registered users
+     */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -22,6 +29,7 @@ class DonationController extends Controller
         $user = User::find($id);
         return view('donations.show', compact('donations', 'user'));
     }
+
 
     public function create() {
         
@@ -39,4 +47,9 @@ class DonationController extends Controller
 
         return redirect()->route('donations.show', $donation->user_id);
     }
+
+    public function thankyou() {
+        return view('donations.success');
+    }
+
 }

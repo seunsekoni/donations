@@ -10,4 +10,10 @@ class Donation extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    // Show price of product in a thousands
+    public function showPrice()
+    {
+        return number_format($this->amount/100, 2);
+    }
 }

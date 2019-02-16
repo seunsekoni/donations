@@ -21,7 +21,7 @@
               <label for="twok" id="twok" style="margin-left: 50px;">NGN2,000</label>
               <input type="radio" name="amount" id="twok" value="200000" required>
   
-              <input type="radio" name="amount" id="threek" style="margin-left: 50px;" value="3000">
+              <input type="radio" name="amount" id="threek" style="margin-left: 50px;" value="300000">
               <label for="threek" id="threek">NGN3,000</label>
   
               <label for="fivek" id="fivek" style="margin-left: 50px;">NGN5,000</label>
@@ -31,7 +31,7 @@
               <label for="tenk" id="tenk">NGN10,000</label>
             </div>
 
-          <input type="hidden" name="metadata" value="{{ json_encode($array = ['category_name' => 'monthly']) }}" >
+          <input type="hidden" name="metadata" value="{{ request()->category }}" >
           <div class="form-group">
             <input type="submit" value="Donate" class="btn btn-danger" style="margin-left: 40%">
           

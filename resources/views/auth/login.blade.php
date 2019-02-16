@@ -50,9 +50,9 @@
                             <div class="col-md-8 offset-md-4">
 
                                 @if (Route::has('password.request'))
-                                    Forgot your password? <a class="red" href="{{ route('password.request') }}">Click Here </a>
+                                    Forgot your password? <button  style="background: none!important;border: none;padding: none;color: blue;" href="{{ route('password.request') }}">Click Here</button>
                                 @endif
-                                <a class="brown btn btn-lg" href="{{ route('register') }}">Sign up</a>
+                                <button class="brown btn btn-lg" href="{{ route('register') }}">Sign up</button>
                                 
                             </div>
                         </div>

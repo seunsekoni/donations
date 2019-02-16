@@ -21,7 +21,35 @@
    margin-left: 50px;
  }
 
+ li > form > input {
+  background: none!important;
+  border: none;
+  padding: none;
+  font: inherit;
+  cursor: pointer;
+  font-size: 50px;
+ }
+
  .donate {
    background-color: darkgrey;
    padding: 5px;
  }
+
+ .logo > a {
+   color: red;
+ }
+
+ .logo a:hover, a:link, a:visited, a:active  {
+  font-weight: bold;
+  color: red;
+  font-size: 50px;
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+  width: 300px;
+  text-decoration: none;
+}
+
+.white {
+  padding: 5px;
+}
